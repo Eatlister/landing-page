@@ -1,9 +1,5 @@
-// Sistema de proteção contra bots
+const MIN_FORM_FILL_TIME = 2000;
 
-// Tempo mínimo para preenchimento do formulário (em milissegundos)
-const MIN_FORM_FILL_TIME = 2000; // 2 segundos
-
-// Tempo máximo para preenchimento do formulário (em milissegundos)
 const MAX_FORM_FILL_TIME = 300000;
 
 export interface BotProtectionData {

@@ -1,37 +1,23 @@
-// Configurações de segurança e validação
-
 export const SECURITY_CONFIG = {
-  // Rate Limiting
   RATE_LIMIT: {
-    IP_MAX_ATTEMPTS: 3, // Máximo de tentativas por IP
-    IP_WINDOW_MS: 15 * 60 * 1000, // 15 minutos
-    IP_BLOCK_DURATION_MS: 30 * 60 * 1000, // 30 minutos
+    IP_MAX_ATTEMPTS: 3,
+    IP_WINDOW_MS: 15 * 60 * 1000,
+    IP_BLOCK_DURATION_MS: 30 * 60 * 1000,
 
-    EMAIL_MAX_ATTEMPTS: 2, // Máximo de tentativas por email
-    EMAIL_WINDOW_MS: 60 * 60 * 1000, // 1 hora
-    EMAIL_BLOCK_DURATION_MS: 2 * 60 * 60 * 1000, // 2 horas
+    EMAIL_MAX_ATTEMPTS: 2,
+    EMAIL_WINDOW_MS: 60 * 60 * 1000,
+    EMAIL_BLOCK_DURATION_MS: 2 * 60 * 60 * 1000,
   },
 
-  // Bot Protection
   BOT_PROTECTION: {
-    MIN_FORM_FILL_TIME_MS: 2000, // 2 segundos
-    MAX_FORM_FILL_TIME_MS: 300000, // 5 minutos
-    MIN_TRUST_SCORE: 50, // Score mínimo de confiança
+    MIN_FORM_FILL_TIME_MS: 2000,
+    MAX_FORM_FILL_TIME_MS: 300000,
+    MIN_TRUST_SCORE: 50,
   },
 
-  // Email Validation
   EMAIL_VALIDATION: {
     MIN_LENGTH: 5,
     MAX_LENGTH: 254,
-    ALLOWED_DOMAINS: [
-      "gmail.com",
-      "yahoo.com",
-      "hotmail.com",
-      "outlook.com",
-      "icloud.com",
-      "protonmail.com",
-      "tutanota.com",
-    ],
     BLOCKED_PATTERNS: [
       /^test@/i,
       /^admin@/i,
@@ -44,22 +30,13 @@ export const SECURITY_CONFIG = {
     ],
   },
 
-  // IP Blacklist
-  IP_BLACKLIST: [
-    "127.0.0.1", // localhost
-    "0.0.0.0",
-    "255.255.255.255",
-    "::1", // IPv6 localhost
-    "fe80::1", // IPv6 link-local
-  ],
+  IP_BLACKLIST: ["127.0.0.1", "0.0.0.0", "255.255.255.255", "::1", "fe80::1"],
 
-  // User-Agent Validation
   USER_AGENT: {
     MIN_LENGTH: 20,
     BLOCKED_KEYWORDS: ["bot", "crawler", "spider", "scraper", "automation"],
   },
 
-  // Logging
   LOGGING: {
     LOG_BOT_ATTEMPTS: true,
     LOG_RATE_LIMIT_VIOLATIONS: true,
@@ -68,14 +45,12 @@ export const SECURITY_CONFIG = {
   },
 };
 
-// Função para verificar se uma configuração está habilitada
 export function isFeatureEnabled(
   feature: keyof typeof SECURITY_CONFIG
 ): boolean {
   return SECURITY_CONFIG[feature] !== undefined;
 }
 
-// Função para obter configuração específica
 export function getConfig<T>(path: string): T | undefined {
   const keys = path.split(".");
   let current: any = SECURITY_CONFIG;
