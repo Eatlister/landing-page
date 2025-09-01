@@ -92,7 +92,7 @@ Recebe emails para inscrição na newsletter.
 {
   "success": true,
   "message": "Email cadastrado com sucesso!",
-  "id": "clx123..."
+  "id": "clx123...."
 }
 ```
 
