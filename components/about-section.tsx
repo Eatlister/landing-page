@@ -62,7 +62,7 @@ const founders = [
       {
         question: "Por que decidiu se jogar no Eatlister?",
         answer:
-          "Olha, eu realmente acredito que isso pode deixar rico! Brincadeiras à parte, esse projeto mexe com os sentimentos que mais gosto.",
+          "Olha, eu realmente acredito que isso pode me deixar rico! Brincadeiras à parte, esse projeto mexe com os sentimentos que mais gosto.",
       },
       {
         question: "O que te motiva nessa jornada?",
